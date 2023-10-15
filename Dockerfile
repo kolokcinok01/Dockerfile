@@ -10,9 +10,10 @@ RUN apt-get update \
     automake \
     && rm -rf /var/lib/apt/lists/*
 
-ADD https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz /helminer/
-RUN cd helminer \
-    && tar xzf hellminer_cpu_linux.tar.gz \
+RUN mkdir helminer \
+    && cd helminer \
+    && https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz \
+    && tar -xf hellminer_cpu_linux.tar.gz \
     && ls
 
 # App
